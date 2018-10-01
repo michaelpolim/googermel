@@ -40,7 +40,7 @@ body::-webkit-scrollbar {
 
 #top-nav-bar i {
 	font-size: 1.5em;
-	color: orange;
+	color: #F9B478;
 }
 
 #top-nav-bar #search-bar {
@@ -187,7 +187,9 @@ body::-webkit-scrollbar {
 #top-nav-bar .nav-icon:hover {
 	background-color: lightgrey;
 }
-
+#top-nav-bar .nav-icon:hover i {
+	color: white;
+}
 /* Main menu left */
 #main-menu-left {
 	display: flex;
@@ -413,6 +415,7 @@ body::-webkit-scrollbar {
   padding: 10px 10px 10px 15px;
   height: 30px;
   border-bottom: 1px solid lightgrey;
+	box-shadow: 0 3px 1px -1px lightgrey;
   background-color: white;
   right: 60px;
   left: 72px;
@@ -717,25 +720,36 @@ body::-webkit-scrollbar {
 	color: dimgrey;
 	position: fixed;
 	bottom: 20px;
-	right: 10px;
+	right: 0;
 	z-index: 3;
 	cursor: pointer;
-	background-color: lightgrey;
-	border-radius: 50%;
-	padding: 10px 15px;
-	text-align: center;
-	transition: width .2s;
+	width: 60px;
+		transition: all .3s cubic-bezier(0.4, 0, 0.2, 1)
 }
 
+#right-panel-toggle .wrapper-1 {
+	position:relative;
+	background-color: lightgrey;
+	border-radius: 50%;
+	text-align: center;
+	padding: 10px 15px;
+	width: 15%;
+	margin-left: 14px;
+}
 #right-panel-toggle i {
 	transition: all .3s;
 }
 
-#right-panel-toggle.half {
+#right-panel-toggle.half .wrapper-1 {
 	border-radius: 23px 0 0 23px;
-  width: 25px;
   text-align: left;
-  right: -7px;
+	padding-right: 30px;
+	margin-left: 25px;
+	box-shadow: 0 2px 2px 0 silver;
+}
+
+#right-panel-toggle.half .wrapper-1:hover {
+	margin-left: 14px;
 }
 
 #right-panel-toggle.half i {
@@ -749,4 +763,70 @@ body::-webkit-scrollbar {
 	#right-panel-toggle {
 		display: none;
 	}
+}
+
+/* Dialogue boxes */
+.dialogue-box {
+	display: none;
+	position: absolute;
+	flex-direction: column;
+	padding: 10px 0;
+	align-items: stretch;
+	border-radius: 2px;
+	font-size: .85em;
+	background-color: white;
+	box-shadow: 0px 3px 8px 1px lightgrey;
+	top: 40px;
+}
+
+.dialogue-box.show {
+	display: flex;
+}
+
+.dialogue-box div {
+	padding: 8px 35px;
+	text-align: left;
+	min-width: 80px;
+}
+
+.dialogue-box hr {
+	margin: 0;
+	margin-bottom: -1px;
+}
+
+.dialogue-box div:hover {
+	background-color:lightgrey;
+	cursor: pointer;
+}
+
+/* Individual dialogue styling */
+#top-nav-dropdown-check + .dialogue-box {
+
+}
+
+#mark-all-as-read + .dialogue-box {
+	left: 110px;
+}
+#mark-all-as-read + .dialogue-box div:last-child {
+	border-top: 1px solid silver;
+}
+
+#keyboard-settings + .dialogue-box {
+	right: 30px
+}
+#keyboard-settings + .dialogue-box div:last-child {
+	border-top: 1px solid silver;
+}
+
+#mel-settings + .dialogue-box {
+	right: 15px;
+}
+
+#mel-settings + .dialogue-box div {
+	border-bottom: 1px solid silver;
+	width: 110px;
+}
+
+#mel-settings + .dialogue-box div:last-child {
+	border-bottom: none;
 }
