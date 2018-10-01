@@ -43,6 +43,11 @@ $(document).ready(function() {
 			$(this).children('.select, .fav').toggleClass('visible');
 	});
 
+	$('#right-panel-toggle').click(function() {
+		$(this).toggleClass('half');
+		$('#right-nav-bar').toggleClass('hide');
+		$('#main-content').toggleClass('expand-right');
+	});
 	//$('#main-content #mails .email').text($('#main-content #mails .email').text().replace('- ',''));
 	// $('#top-toolbar .icon, #top-toolbar .circle-icon').hover(
 	// 	function() {
