@@ -14,6 +14,7 @@
 // }
 
 // console.log(document.getElementById('nav-box'));
+
 $(document).ready(function() {
 	$('#apps-expander').click(function() {
 		$('#apps-box').toggle('fast');
@@ -47,6 +48,43 @@ $(document).ready(function() {
 		$(this).toggleClass('half');
 		$('#right-nav-bar').toggleClass('hide');
 		$('#main-content').toggleClass('expand-right');
+	});
+
+	$('#top-toolbar .option-icon').click(function() {
+		if (!$(this).next().hasClass('show') && $('#top-toolbar .dialogue-box.show').length == 0) {
+			$(this).next().toggleClass('show');
+		} else if ($(this).next().hasClass('show')) {
+			$(this).next().toggleClass('show');
+		} else if (!$(this).next().hasClass('show') && $('#top-toolbar .dialogue-box.show').length > 0) {
+			$('#top-toolbar .dialogue-box.show').toggleClass('show');
+			$(this).next().toggleClass('show');
+		}
+	});
+
+	$('.email .select').click(function() {
+		$(this).children().toggleClass('fa-square fa-check-square');
+		$(this).parent().toggleClass('checked');
+	});
+
+	$('#top-toolbar #checkbox').click(function() {
+		if ($(this).children().hasClass('fa-square')) {
+			$(this).children().toggleClass('fa-square fa-check-square');
+			$('#mails .email .select').children('.fa-square').toggleClass('fa-square fa-check-square');
+		} else {
+			//to uncheck all the children regardless of ticked or unticked
+			$(this).children().toggleClass('fa-square fa-check-square');
+			$('#mails .email .select').children('.fa-check-square').toggleClass('fa-check-square fa-square');
+		}
+	});
+
+	$('#mails .email .fav').click(function() {
+		if($(this).children().hasClass('fas')) {
+			$(this).children().toggleClass('fas far').css({'color': 'black'});
+			$(this).parent().toggleClass('favourited');
+		} else {
+			$(this).children().toggleClass('fas far').css({'color': 'rgb(202, 115, 0)'});
+			$(this).parent().toggleClass('favourited');
+		}
 	});
 	//$('#main-content #mails .email').text($('#main-content #mails .email').text().replace('- ',''));
 	// $('#top-toolbar .icon, #top-toolbar .circle-icon').hover(
