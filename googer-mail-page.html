@@ -1,0 +1,822 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Googer Mel</title>
+		<meta charset="utf-8">
+		<meta name="description" content="Googer Mail">
+		<meta name="keywords" content="Googer, Mail, Calendar">
+		<meta name="author" content="Michael">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="stylesheet" href="./googer-mail.css" type="text/css"></link>
+		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css"
+			integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous"></link>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+		<script src="./chrome.js"></script>
+	</head>
+
+	<body>
+		<header id='top-nav-bar'>
+			<div id='main-menu-expander' class='nav-icon'>
+				<i class='fas fa-bars'></i>
+			</div>
+			<div id='mail-logo'>
+				GOOGER MEL
+			</div>
+			<div id='search-bar'>
+				<input type=text placeholder='Search ur mel'></input>
+					<div class='search-icon'>
+						<i class='fas fa-search'></i>
+					</div>
+					<span class='dropdown'>
+					</span>
+					<div id='search-settings'>
+					</div>
+			</div>
+			<div id='apps-expander' class='nav-icon'>
+				<i class='fas fa-th'></i>
+			</div>
+
+			<nav id='apps-box'>
+				<div id='section-1' class='section'>
+					<a href="#">
+						<div><i class='fas fa-question-circle'></i></div>
+						<span class='item-name'>Item One</span>
+					</a>
+					<a href="#">
+						<div class='icon'><i class='fas fa-ambulance'></i></div>
+						<span class='item-name'>Item Two</span>
+					</a>
+					<a href="#">
+						<div><i class='fas fa-briefcase'></i></div>
+						<span class='item-name'>Item Three</span>
+					</a>
+					<a href="#">
+						<div><i class='fas fa-camera'></i></div>
+						<span class='item-name'>Item Four</span>
+					</a>
+					<a href="#">
+						<div><i class='fas fa-map-pin'></i></div>
+						<span class='item-name'>Item Five</span>
+					</a>
+					<a href="#">
+						<div><i class='fas fa-pencil-alt'></i></div>
+						<span class='item-name'>Item Six</span>
+					</a>
+					<a href="#">
+						<div><i class='fas fa-birthday-cake'></i></div>
+						<span class='item-name'>Item Seven</span>
+					</a>
+					<a href="#">
+						<div><i class='fas fa-laptop-code'></i></div>
+						<span class='item-name'>Item Eight</span>
+					</a>
+					<a href="#">
+						<div><i class='fas fa-cloud'></i></div>
+						<span class='item-name'>Item Nine</span>
+					</a>
+					<a href="#">
+						<div><i class='fas fa-envelope'></i></div>
+						<span class='item-name'>Item Ten</span>
+					</a>
+					<a href="#">
+						<div><i class='fas fa-folder-open'></i></div>
+						<span class='item-name'>Item Eleven</span>
+					</a>
+					<a href="#">
+						<div><i class='fas fa-frog'></i></div>
+						<span class='item-name'>Item Twelve</span>
+					</a>
+				</div>
+
+				<hr>
+
+				<div id='section-2' class='section'>
+					<a href="#">
+						<div><i class='fas fa-question-circle'></i></div>
+						<span class='item-name'>Item One</span>
+					</a>
+					<a href="#">
+						<div class='icon'><i class='fas fa-ambulance'></i></div>
+						<span class='item-name'>Item Two</span>
+					</a>
+					<a href="#">
+						<div><i class='fas fa-briefcase'></i></div>
+						<span class='item-name'>Item Three</span>
+					</a>
+					<a href="#">
+						<div><i class='fas fa-camera'></i></div>
+						<span class='item-name'>Item Four</span>
+					</a>
+					<a href="#">
+						<div><i class='fas fa-map-pin'></i></div>
+						<span class='item-name'>Item Five</span>
+					</a>
+					<a href="#">
+						<div><i class='fas fa-pencil-alt'></i></div>
+						<span class='item-name'>Item Six</span>
+					</a>
+					<a href="#">
+						<div><i class='fas fa-birthday-cake'></i></div>
+						<span class='item-name'>Item Seven</span>
+					</a>
+				</div>
+			</nav>
+			<div id='notification' class='nav-icon'>
+				<i class='fas fa-bell'></i>
+			</div>
+			<div id='user-setting' style="text-align: center">
+				USER
+			</div>
+		</header>
+
+		<main id='main'>
+			<nav id='main-menu-left' class='unexpanded'>
+				<div id='compose-button' class='icon-container'>
+					<span class='icon'><i class='fas fa-pen'></i></span>
+					<span class='item-name'>Compose</span>
+				</div>
+				<div id='menu-list'>
+					<div class='icon-container'>
+						<span class='icon'><i class='fas fa-box-open'></i></span>
+						<span class='item-name'>Inbox</span>
+					</div>
+					<div class='icon-container'>
+						<span class='icon'><i class='fas fa-archive'></i></span>
+						<span class='item-name'>Archive</span>
+					</div>
+					<div class='icon-container'>
+						<span class='icon'><i class='fas fa-star'></i></span>
+						<span class='item-name'>Favourite</span>
+					</div>
+					<div class='icon-container'>
+						<span class='icon'><i class='fas fa-location-arrow'></i></span>
+						<span class='item-name'>Sent</span>
+					</div>
+					<div class='icon-container'>
+						<span class='icon'><i class='fas fa-file'></i></span>
+						<span class='item-name'>Draft</span>
+					</div>
+					<div class='icon-container'>
+						<span class='icon'><i class='fas fa-tag'></i></span>
+						<span class='item-name'>Custom#1</span>
+					</div>
+					<div class='icon-container'>
+						<span class='icon'><i class='fas fa-tag'></i></span>
+						<span class='item-name'>Custom#2</span>
+					</div>
+					<div class='icon-container'>
+						<span class='icon'><i class='fas fa-angle-down'></i></span>
+						<span class='item-name'>More</span>
+					</div>
+				</div>
+				<div id='chat'>
+					<div class='icon-container'>
+						<span class='icon'><i class='fas fa-user'></i></span>
+						<span class='item-name'>Michael</span>
+						<span id='add-icon'>
+							<i class='fas fa-plus'></i>
+						</span>
+					</div>
+				</div>
+				<div id='options'>
+					<div class='small-icons selected'>
+						<i class='fas fa-comments'></i>
+					</div>
+					<div class='small-icons'>
+						<i class='fas fa-phone-square'></i>
+					</div>
+					<div class='small-icons'>
+						<i class='fas fa-address-book'></i>
+					</div>
+				</div>
+			</nav>
+
+			<nav id='right-nav-bar'>
+				<div class='icon'>
+					<i class='far fa-calendar-alt'></i>
+				</div>
+				<div class='icon'>
+					<i class='fas fa-lightbulb'></i>
+				</div>
+				<div class='icon'>
+					<i class='fas fa-tasks'></i>
+				</div>
+
+				<hr>
+
+				<div class='icon'>
+					<i class='fas fa-plus'></i>
+				</div>
+			</nav>
+
+			<div id='right-panel-toggle'>
+
+			</div>
+
+			<div id='main-content'>
+				<div id='top-toolbar'>
+					<div class='left'>
+						<div id='select' class='two-icons'>
+							<div id='checkbox' class='icon'>
+								<i class='far fa-square'></i>
+							</div>
+							<div class='icon'>
+								<i class='fas fa-caret-down'></i>
+							</div>
+						</div>
+						<div class='circle-icon'>
+							<i class='fas fa-redo-alt'></i>
+						</div>
+						<div class='circle-icon'>
+							<i class='fas fa-ellipsis-v'></i>
+						</div>
+					</div>
+					<div class='right'>
+						<div class='icon'>
+							<span id='page-total'>1-50 of 432</span>
+						</div>
+						<div class='circle-icon'>
+							<i class='fas fa-angle-left'></i>
+						</div>
+						<div class='circle-icon'>
+							<i class='fas fa-angle-right'></i>
+						</div>
+						<div class='two-icons'>
+							<div class='icon'>
+								<i class='fas fa-keyboard'></i>
+							</div>
+							<div class='icon'>
+								<i class='fas fa-caret-down'></i>
+							</div>
+						</div>
+						<div class='circle-icon'>
+							<i class='fas fa-cog'></i>
+						</div>
+					</div>
+				</div>
+				<div id='mails'>
+					<div class='email'>
+						<span class='drag-area'>
+							<i class='fas fa-ellipsis-v'></i>
+							<i class='fas fa-ellipsis-v'></i>
+						</span>
+						<span class='circle-icon select'>
+							<i class='far fa-square'></i>
+						</span>
+						<span class='circle-icon fav'>
+							<i class='far fa-star'></i>
+						</span>
+						<span class='sender'>
+							CodePen
+						</span>
+						<span class='subject-preview'>
+							<span class='subject'>
+								What you get for going PRO on CodePen
+							</span>
+							<span class='content'>
+								<span class='dash'>- </span>We gotta tell you about CodePen PRO! It's packed with
+							</span>
+						</span>
+						<span class='date'>
+							5:31 PM
+						</span>
+						<span class='tools'>
+							<div class='circle-icon'>
+								<i class='fas fa-archive'></i>
+							</div>
+							<div class='circle-icon'>
+								<i class='fas fa-trash'></i>
+							</div>
+							<div class='circle-icon'>
+								<i class='fas fa-envelope-open'></i>
+							</div>
+							<div class='circle-icon'>
+								<i class='fas fa-clock'></i>
+							</div>
+						</span>
+					</div>
+					<div class='email'>
+						<span class='drag-area'>
+							<i class='fas fa-ellipsis-v'></i>
+							<i class='fas fa-ellipsis-v'></i>
+						</span>
+						<span class='circle-icon select'>
+							<i class='far fa-square'></i>
+						</span>
+						<span class='circle-icon fav'>
+							<i class='far fa-star'></i>
+						</span>
+						<span class='sender'>
+							CodePen
+						</span>
+						<span class='subject-preview'>
+							<span class='subject'>
+								What you get for going PRO on CodePen
+							</span>
+							<span class='content'>
+								<span class='dash'>- </span>We gotta tell you about CodePen PRO! It's packed with
+							</span>
+						</span>
+						<span class='date'>
+							10.09 AM
+						</span>
+						<span class='tools'>
+							<div class='circle-icon'>
+								<i class='fas fa-archive'></i>
+							</div>
+							<div class='circle-icon'>
+								<i class='fas fa-trash'></i>
+							</div>
+							<div class='circle-icon'>
+								<i class='fas fa-envelope-open'></i>
+							</div>
+							<div class='circle-icon'>
+								<i class='fas fa-clock'></i>
+							</div>
+						</span>
+					</div>
+					<div class='email'>
+						<span class='drag-area'>
+							<i class='fas fa-ellipsis-v'></i>
+							<i class='fas fa-ellipsis-v'></i>
+						</span>
+						<span class='circle-icon select'>
+							<i class='far fa-square'></i>
+						</span>
+						<span class='circle-icon fav'>
+							<i class='far fa-star'></i>
+						</span>
+						<span class='sender'>
+							Jessica
+						</span>
+						<span class='subject-preview'>
+							<span class='subject'>
+								Meeting Minutes on Monday 13/9/18
+							</span>
+							<span class='content'>
+								<span class='dash'>- </span>Hey this is the meeting minutes for everything that's covered during Monday
+							</span>
+						</span>
+						<span class='date'>
+							Sep 29
+						</span>
+						<span class='tools'>
+							<div class='circle-icon'>
+								<i class='fas fa-archive'></i>
+							</div>
+							<div class='circle-icon'>
+								<i class='fas fa-trash'></i>
+							</div>
+							<div class='circle-icon'>
+								<i class='fas fa-envelope-open'></i>
+							</div>
+							<div class='circle-icon'>
+								<i class='fas fa-clock'></i>
+							</div>
+						</span>
+					</div>
+					<div class='email'>
+						<span class='drag-area'>
+							<i class='fas fa-ellipsis-v'></i>
+							<i class='fas fa-ellipsis-v'></i>
+						</span>
+						<span class='circle-icon select'>
+							<i class='far fa-square'></i>
+						</span>
+						<span class='circle-icon fav'>
+							<i class='far fa-star'></i>
+						</span>
+						<span class='sender'>
+							CodePen
+						</span>
+						<span class='subject-preview'>
+							<span class='subject'>
+								What you get for going PRO on CodePen
+							</span>
+							<span class='content'>
+								<span class='dash'>- </span>We gotta tell you about CodePen PRO! It's packed with
+							</span>
+						</span>
+						<span class='date'>
+							Sep 29
+						</span>
+						<span class='tools'>
+							<div class='circle-icon'>
+								<i class='fas fa-archive'></i>
+							</div>
+							<div class='circle-icon'>
+								<i class='fas fa-trash'></i>
+							</div>
+							<div class='circle-icon'>
+								<i class='fas fa-envelope-open'></i>
+							</div>
+							<div class='circle-icon'>
+								<i class='fas fa-clock'></i>
+							</div>
+						</span>
+					</div>
+					<div class='email'>
+						<span class='drag-area'>
+							<i class='fas fa-ellipsis-v'></i>
+							<i class='fas fa-ellipsis-v'></i>
+						</span>
+						<span class='circle-icon select'>
+							<i class='far fa-square'></i>
+						</span>
+						<span class='circle-icon fav'>
+							<i class='far fa-star'></i>
+						</span>
+						<span class='sender'>
+							Jessica
+						</span>
+						<span class='subject-preview'>
+							<span class='subject'>
+								Meeting Minutes on Monday 13/9/18
+							</span>
+							<span class='content'>
+								<span class='dash'>- </span>Hey this is the meeting minutes for everything that's covered during Monday
+							</span>
+						</span>
+						<span class='date'>
+							Sep 28
+						</span>
+						<span class='tools'>
+							<div class='circle-icon'>
+								<i class='fas fa-archive'></i>
+							</div>
+							<div class='circle-icon'>
+								<i class='fas fa-trash'></i>
+							</div>
+							<div class='circle-icon'>
+								<i class='fas fa-envelope-open'></i>
+							</div>
+							<div class='circle-icon'>
+								<i class='fas fa-clock'></i>
+							</div>
+						</span>
+					</div>
+					<div class='email'>
+						<span class='drag-area'>
+							<i class='fas fa-ellipsis-v'></i>
+							<i class='fas fa-ellipsis-v'></i>
+						</span>
+						<span class='circle-icon select'>
+							<i class='far fa-square'></i>
+						</span>
+						<span class='circle-icon fav'>
+							<i class='far fa-star'></i>
+						</span>
+						<span class='sender'>
+							CodePen
+						</span>
+						<span class='subject-preview'>
+							<span class='subject'>
+								What you get for going PRO on CodePen
+							</span>
+							<span class='content'>
+								<span class='dash'>- </span>We gotta tell you about CodePen PRO! It's packed with
+							</span>
+						</span>
+						<span class='date'>
+							Sep 28
+						</span>
+						<span class='tools'>
+							<div class='circle-icon'>
+								<i class='fas fa-archive'></i>
+							</div>
+							<div class='circle-icon'>
+								<i class='fas fa-trash'></i>
+							</div>
+							<div class='circle-icon'>
+								<i class='fas fa-envelope-open'></i>
+							</div>
+							<div class='circle-icon'>
+								<i class='fas fa-clock'></i>
+							</div>
+						</span>
+					</div>
+					<div class='email'>
+						<span class='drag-area'>
+							<i class='fas fa-ellipsis-v'></i>
+							<i class='fas fa-ellipsis-v'></i>
+						</span>
+						<span class='circle-icon select'>
+							<i class='far fa-square'></i>
+						</span>
+						<span class='circle-icon fav'>
+							<i class='far fa-star'></i>
+						</span>
+						<span class='sender'>
+							Jessica
+						</span>
+						<span class='subject-preview'>
+							<span class='subject'>
+								Meeting Minutes on Monday 13/9/18
+							</span>
+							<span class='content'>
+								<span class='dash'>- </span>Hey this is the meeting minutes for everything that's covered during Monday
+							</span>
+						</span>
+						<span class='date'>
+							Sep 27
+						</span>
+						<span class='tools'>
+							<div class='circle-icon'>
+								<i class='fas fa-archive'></i>
+							</div>
+							<div class='circle-icon'>
+								<i class='fas fa-trash'></i>
+							</div>
+							<div class='circle-icon'>
+								<i class='fas fa-envelope-open'></i>
+							</div>
+							<div class='circle-icon'>
+								<i class='fas fa-clock'></i>
+							</div>
+						</span>
+					</div>
+					<div class='email'>
+						<span class='drag-area'>
+							<i class='fas fa-ellipsis-v'></i>
+							<i class='fas fa-ellipsis-v'></i>
+						</span>
+						<span class='circle-icon select'>
+							<i class='far fa-square'></i>
+						</span>
+						<span class='circle-icon fav'>
+							<i class='far fa-star'></i>
+						</span>
+						<span class='sender'>
+							CodePen
+						</span>
+						<span class='subject-preview'>
+							<span class='subject'>
+								What you get for going PRO on CodePen
+							</span>
+							<span class='content'>
+								<span class='dash'>- </span>We gotta tell you about CodePen PRO! It's packed with
+							</span>
+						</span>
+						<span class='date'>
+							Sep 27
+						</span>
+						<span class='tools'>
+							<div class='circle-icon'>
+								<i class='fas fa-archive'></i>
+							</div>
+							<div class='circle-icon'>
+								<i class='fas fa-trash'></i>
+							</div>
+							<div class='circle-icon'>
+								<i class='fas fa-envelope-open'></i>
+							</div>
+							<div class='circle-icon'>
+								<i class='fas fa-clock'></i>
+							</div>
+						</span>
+					</div>
+					<div class='email'>
+						<span class='drag-area'>
+							<i class='fas fa-ellipsis-v'></i>
+							<i class='fas fa-ellipsis-v'></i>
+						</span>
+						<span class='circle-icon select'>
+							<i class='far fa-square'></i>
+						</span>
+						<span class='circle-icon fav'>
+							<i class='far fa-star'></i>
+						</span>
+						<span class='sender'>
+							Jessica
+						</span>
+						<span class='subject-preview'>
+							<span class='subject'>
+								Meeting Minutes on Monday 13/9/18
+							</span>
+							<span class='content'>
+								<span class='dash'>- </span>Hey this is the meeting minutes for everything that's covered during Monday
+							</span>
+						</span>
+						<span class='date'>
+							Sep 27
+						</span>
+						<span class='tools'>
+							<div class='circle-icon'>
+								<i class='fas fa-archive'></i>
+							</div>
+							<div class='circle-icon'>
+								<i class='fas fa-trash'></i>
+							</div>
+							<div class='circle-icon'>
+								<i class='fas fa-envelope-open'></i>
+							</div>
+							<div class='circle-icon'>
+								<i class='fas fa-clock'></i>
+							</div>
+						</span>
+					</div>
+					<div class='email'>
+						<span class='drag-area'>
+							<i class='fas fa-ellipsis-v'></i>
+							<i class='fas fa-ellipsis-v'></i>
+						</span>
+						<span class='circle-icon select'>
+							<i class='far fa-square'></i>
+						</span>
+						<span class='circle-icon fav'>
+							<i class='far fa-star'></i>
+						</span>
+						<span class='sender'>
+							Jessica
+						</span>
+						<span class='subject-preview'>
+							<span class='subject'>
+								Meeting Minutes on Monday 13/9/18
+							</span>
+							<span class='content'>
+								<span class='dash'>- </span>Hey this is the meeting minutes for everything that's covered during Monday
+							</span>
+						</span>
+						<span class='date'>
+							Sep 27
+						</span>
+						<span class='tools'>
+							<div class='circle-icon'>
+								<i class='fas fa-archive'></i>
+							</div>
+							<div class='circle-icon'>
+								<i class='fas fa-trash'></i>
+							</div>
+							<div class='circle-icon'>
+								<i class='fas fa-envelope-open'></i>
+							</div>
+							<div class='circle-icon'>
+								<i class='fas fa-clock'></i>
+							</div>
+						</span>
+					</div>
+					<div class='email'>
+						<span class='drag-area'>
+							<i class='fas fa-ellipsis-v'></i>
+							<i class='fas fa-ellipsis-v'></i>
+						</span>
+						<span class='circle-icon select'>
+							<i class='far fa-square'></i>
+						</span>
+						<span class='circle-icon fav'>
+							<i class='far fa-star'></i>
+						</span>
+						<span class='sender'>
+							CodePen
+						</span>
+						<span class='subject-preview'>
+							<span class='subject'>
+								What you get for going PRO on CodePen
+							</span>
+							<span class='content'>
+								<span class='dash'>- </span>We gotta tell you about CodePen PRO! It's packed with
+							</span>
+						</span>
+						<span class='date'>
+							Sep 27
+						</span>
+						<span class='tools'>
+							<div class='circle-icon'>
+								<i class='fas fa-archive'></i>
+							</div>
+							<div class='circle-icon'>
+								<i class='fas fa-trash'></i>
+							</div>
+							<div class='circle-icon'>
+								<i class='fas fa-envelope-open'></i>
+							</div>
+							<div class='circle-icon'>
+								<i class='fas fa-clock'></i>
+							</div>
+						</span>
+					</div>
+					<div class='email'>
+						<span class='drag-area'>
+							<i class='fas fa-ellipsis-v'></i>
+							<i class='fas fa-ellipsis-v'></i>
+						</span>
+						<span class='circle-icon select'>
+							<i class='far fa-square'></i>
+						</span>
+						<span class='circle-icon fav'>
+							<i class='far fa-star'></i>
+						</span>
+						<span class='sender'>
+							Jessica
+						</span>
+						<span class='subject-preview'>
+							<span class='subject'>
+								Meeting Minutes on Monday 13/9/18
+							</span>
+							<span class='content'>
+								<span class='dash'>- </span>Hey this is the meeting minutes for everything that's covered during Monday
+							</span>
+						</span>
+						<span class='date'>
+							Sep 27
+						</span>
+						<span class='tools'>
+							<div class='circle-icon'>
+								<i class='fas fa-archive'></i>
+							</div>
+							<div class='circle-icon'>
+								<i class='fas fa-trash'></i>
+							</div>
+							<div class='circle-icon'>
+								<i class='fas fa-envelope-open'></i>
+							</div>
+							<div class='circle-icon'>
+								<i class='fas fa-clock'></i>
+							</div>
+						</span>
+					</div>
+					<div class='email'>
+						<span class='drag-area'>
+							<i class='fas fa-ellipsis-v'></i>
+							<i class='fas fa-ellipsis-v'></i>
+						</span>
+						<span class='circle-icon select'>
+							<i class='far fa-square'></i>
+						</span>
+						<span class='circle-icon fav'>
+							<i class='far fa-star'></i>
+						</span>
+						<span class='sender'>
+							CodePen
+						</span>
+						<span class='subject-preview'>
+							<span class='subject'>
+								What you get for going PRO on CodePen
+							</span>
+							<span class='content'>
+								<span class='dash'>- </span>We gotta tell you about CodePen PRO! It's packed with amazing good stuff awesome great cool
+							</span>
+						</span>
+						<span class='date'>
+							Sep 27
+						</span>
+						<span class='tools'>
+							<div class='circle-icon'>
+								<i class='fas fa-archive'></i>
+							</div>
+							<div class='circle-icon'>
+								<i class='fas fa-trash'></i>
+							</div>
+							<div class='circle-icon'>
+								<i class='fas fa-envelope-open'></i>
+							</div>
+							<div class='circle-icon'>
+								<i class='fas fa-clock'></i>
+							</div>
+						</span>
+					</div>
+					<div class='email'>
+						<span class='drag-area'>
+							<i class='fas fa-ellipsis-v'></i>
+							<i class='fas fa-ellipsis-v'></i>
+						</span>
+						<span class='circle-icon select'>
+							<i class='far fa-square'></i>
+						</span>
+						<span class='circle-icon fav'>
+							<i class='far fa-star'></i>
+						</span>
+						<span class='sender'>
+							Jessica
+						</span>
+						<span class='subject-preview'>
+							<span class='subject'>
+								Meeting Minutes on Monday 13/9/18
+							</span>
+							<span class='content'>
+								<span class='dash'>- </span>Hey this is the meeting minutes for everything that's covered during Monday
+							</span>
+						</span>
+						<span class='date'>
+							Sep 27
+						</span>
+						<span class='tools'>
+							<div class='circle-icon'>
+								<i class='fas fa-archive'></i>
+							</div>
+							<div class='circle-icon'>
+								<i class='fas fa-trash'></i>
+							</div>
+							<div class='circle-icon'>
+								<i class='fas fa-envelope-open'></i>
+							</div>
+							<div class='circle-icon'>
+								<i class='fas fa-clock'></i>
+							</div>
+						</span>
+					</div>
+				</div>
+			</div>
+		</main>
+	</body>
+</html>
