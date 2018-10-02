@@ -98,7 +98,7 @@ $(document).ready(function() {
 	$('#main-menu-left').hover(function() {
 		console.log($(this));
 		if($(this).hasClass('expanded')) {
-			
+
 		} else if ($(this).hasClass('unexpanded')){
 			timeoutId = window.setTimeout(function() {
 				$('#main-menu-left').toggleClass('hover-expand');
