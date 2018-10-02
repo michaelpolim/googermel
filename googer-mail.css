@@ -219,6 +219,10 @@ body::-webkit-scrollbar {
 	text-align: left;
 	overflow-x: none;
 }
+#main-menu-left.hover-expand {
+	width: 230px;
+	box-shadow: 2px 0px 2px 1px lightgrey;
+}
 
 #main-menu-left .icon {
 	position: absolute;
@@ -249,8 +253,6 @@ body::-webkit-scrollbar {
 	text-align: center;
 	font-size: .6em;
 }
-#main-menu-left.unexpanded #menu-list {
-}
 
 #main-menu-left #compose-button {
 	width: 100%;
@@ -274,12 +276,6 @@ body::-webkit-scrollbar {
 	padding: 7px 0 0 10px;
 	box-sizing: border-box;
 }
-#main-menu-left.expanded .icon-container {
-	border-radius: 0 25px 25px 0;
-	text-align: left;
-	width: 85%;
-	margin-left: 0;
-}
 #main-menu-left.unexpanded .icon-container {
 	width: 60%;
 	margin-left: 10px;
@@ -295,6 +291,16 @@ body::-webkit-scrollbar {
 	width: 80%;
 }
 #main-menu-left.expanded .icon-container {
+	border-radius: 0 25px 25px 0;
+	text-align: left;
+	width: 85%;
+	margin-left: 0;
+}
+
+#main-menu-left.hover-expand .icon-container{
+	text-align: left;
+	width: 85%;
+	margin-left: 0;
 	border-radius: 0 25px 25px 0;
 }
 

@@ -80,10 +80,36 @@ $(document).ready(function() {
 	$('#mails .email .fav').click(function() {
 		if($(this).children().hasClass('fas')) {
 			$(this).children().toggleClass('fas far').css({'color': 'black'});
-			$(this).parent().toggleClass('favourited');
+			$(this).parent().toggleClass('favourite');
 		} else {
 			$(this).children().toggleClass('fas far').css({'color': 'rgb(202, 115, 0)'});
-			$(this).parent().toggleClass('favourited');
+			$(this).parent().toggleClass('favourite');
+		}
+	});
+
+	// $('#main-menu-left').hover(
+	// 	function() {
+	// 		$(this).toggleClass('hover-expand');
+	// },function() {
+	// 		$(this).toggleClass('hover-expand');
+	// });
+
+	let timeoutId;
+	$('#main-menu-left').hover(function() {
+		console.log($(this));
+		if($(this).hasClass('expanded')) {
+
+		} else if ($(this).hasClass('unexpanded')){
+			timeoutId = window.setTimeout(function() {
+				$('#main-menu-left').toggleClass('hover-expand');
+			},500);
+		}
+	},
+	function() {
+		if($(this).hasClass('hover-expand')) {
+			$(this).toggleClass('hover-expand');
+		} else {
+			window.clearTimeout(timeoutId);
 		}
 	});
 	//$('#main-content #mails .email').text($('#main-content #mails .email').text().replace('- ',''));
