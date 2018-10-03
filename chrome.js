@@ -184,6 +184,25 @@ $(document).ready(function() {
 	});
 });
 
+let timeoutId;
+$('#main-menu-left').hover(function() {
+	console.log($(this));
+	if($(this).hasClass('expanded')) {
+
+	} else if ($(this).hasClass('unexpanded')){
+		timeoutId = window.setTimeout(function() {
+			$('#main-menu-left').toggleClass('hover-expand');
+		},500);
+	}
+},
+function() {
+	if($(this).hasClass('hover-expand')) {
+		$(this).toggleClass('hover-expand');
+	} else {
+		window.clearTimeout(timeoutId);
+	}
+});
+
 var toggleNavBox = function() {
 	$(document).ready(function() {
 		var box = $('#nav-box');
