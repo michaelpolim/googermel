@@ -79,49 +79,109 @@ $(document).ready(function() {
 
 	$('#mails .email .fav').click(function() {
 		if($(this).children().hasClass('fas')) {
-			$(this).children().toggleClass('fas far').css({'color': 'black'});
-			$(this).parent().toggleClass('favourite');
+			$(this).children().toggleClass('fas far');
+			$(this).parent().toggleClass('favourited');
+			$('#mails #inbox').append($(this).parent());
 		} else {
-			$(this).children().toggleClass('fas far').css({'color': 'rgb(202, 115, 0)'});
-			$(this).parent().toggleClass('favourite');
+			$('#mails #inbox').children().each(function(index, val) {
+				console.log(index, $(val));
+			});
+			$(this).children().toggleClass('fas far');
+			$(this).parent().toggleClass('favourited');
+			$('#mails #favourite-mails').append($(this).parent());
 		}
 	});
 
-	// $('#main-menu-left').hover(
-	// 	function() {
-	// 		$(this).toggleClass('hover-expand');
-	// },function() {
-	// 		$(this).toggleClass('hover-expand');
-	// });
-
-	let timeoutId;
-	$('#main-menu-left').hover(function() {
-		console.log($(this));
-		if($(this).hasClass('expanded')) {
-
-		} else if ($(this).hasClass('unexpanded')){
-			timeoutId = window.setTimeout(function() {
-				$('#main-menu-left').toggleClass('hover-expand');
-			},500);
-		}
-	},
-	function() {
-		if($(this).hasClass('hover-expand')) {
-			$(this).toggleClass('hover-expand');
+	$('#main-menu-left #menu-list .icon-container').click(function() {
+		if($(this).hasClass('selected')) {
+			//if user clicks on the currently selected, do nothing
 		} else {
-			window.clearTimeout(timeoutId);
+			console.log($(this).attr('id'));
+			let prevSelected = $('#main-menu-left .icon-container.selected').attr('id');
+			let currentlySelected = $(this).attr('id');
+
+			$('#main-menu-left .icon-container.selected').toggleClass('selected');
+			$(this).toggleClass('selected');
+
+
+			switch(prevSelected) {
+				case 'inbox-icon':
+					$('#inbox').css({'display': 'none'});
+					break;
+				case 'archive-icon':
+					$('#archive-mails').css({'display': 'none'});
+					break;
+				case 'sent-icon':
+					$('#sent-mails').css({'display': 'none'});
+					break;
+				case 'fav-icon':
+					$('#favourite-mails').css({'display': 'none'});
+					break;
+				case 'draft-icon':
+					$('#draft-mails').css({'display': 'none'});
+					break;
+				case 'custom1-icon':
+					$('#custom1-mails').css({'display': 'none'});
+					break;
+				case 'custom2-icon':
+					$('#custom2-mails').css({'display': 'none'});
+					break;
+			}
+
+			switch(currentlySelected) {
+				case 'inbox-icon':
+					$('#inbox').css({'display': 'flex', 'flex-direction': 'column'});
+					$('#search-bar input').attr('placeholder', 'Search ur mel');
+					break;
+				case 'archive-icon':
+					$('#archive-mails').css({'display': 'flex', 'flex-direction': 'column'});
+					$('#search-bar input').attr('placeholder', 'in: Archive');
+					break;
+				case 'sent-icon':
+					$('#sent-mails').css({'display': 'flex', 'flex-direction': 'column'});
+					$('#search-bar input').attr('placeholder', 'in: Sent');
+					break;
+				case 'fav-icon':
+					$('#favourite-mails').css({'display': 'flex', 'flex-direction': 'column'});
+					$('#search-bar input').attr('placeholder', 'in: Favourites');
+					break;
+				case 'draft-icon':
+					$('#draft-mails').css({'display': 'flex', 'flex-direction': 'column'});
+					$('#search-bar input').attr('placeholder', 'in: Draft');
+					break;
+				case 'custom1-icon':
+					$('#custom1-mails').css({'display': 'flex', 'flex-direction': 'column'});
+					$('#search-bar input').attr('placeholder', 'label: Custom1');
+					break;
+				case 'custom2-icon':
+					$('#custom2-mails').css({'display': 'flex', 'flex-direction': 'column'});
+					$('#search-bar input').attr('placeholder', 'label: Custom2');
+					break;
+			}
 		}
 	});
-	//$('#main-content #mails .email').text($('#main-content #mails .email').text().replace('- ',''));
-	// $('#top-toolbar .icon, #top-toolbar .circle-icon').hover(
-	// 	function() {
-	// 	console.log($(this).children());
-	// 	$(this).children('i').css({'transform': 'scale(.69,.69)'});
-	// 	$(this).css({'transform': 'scale(1.5,1.5)'});
-	// }, function() {
-	// 	$(this).css({'transform': 'scale(1,1)'});
-	// 	$(this).children('i').css({'transform': 'scale(1,1)'});
-	// });
+
+	$('#compose-button').click(function() {
+	console.log($('#compose-email-area .compose-box.hidden'));
+		//if there is no box, display a box,
+		if ($('#compose-email-area .compose-box.hidden').length > 0) {
+			$('#compose-email-area .compose-box.hidden').eq(0).toggle('fast').toggleClass('hidden');
+			console.log($('#compose-email-area .compose-box.hidden'));
+		}
+	});
+
+	$('#compose-email-area .header .window-control i').click(function() {
+		if ($(this).hasClass('minimize')) {
+			$(this).parents('.compose-box').toggleClass('minimized');
+		}
+		if ($(this).hasClass('resize')) {
+			$(this).parents('.compose-box').toggleClass('resize');
+		}
+		if ($(this).hasClass('close')) {
+			$(this).parents('.compose-box').toggle('fast').toggleClass('hidden');
+			console.log($('#compose-email-area .compose-box.hidden'));
+		}
+	});
 });
 
 var toggleNavBox = function() {
