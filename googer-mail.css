@@ -267,6 +267,7 @@ body::-webkit-scrollbar {
 	box-sizing: border-box;
 	margin-bottom: 3px;
 }
+
 #main-menu-left.unexpanded .icon-container {
 	width: 56%;
 	margin-left: 10px;
@@ -293,6 +294,9 @@ body::-webkit-scrollbar {
 	width: 85%;
 	margin-left: 0;
 	border-radius: 0 25px 25px 0;
+}
+#main-menu-left.hover-expand #compose-button.icon-container {
+	width: 90%;
 }
 
 #main-menu-left #chat {
@@ -354,6 +358,12 @@ body::-webkit-scrollbar {
 
 
 /* styling for scrollbar on main menu list left */
+#main-menu-left #menu-list::-webkit-scrollbar {
+	display: none;
+}
+#main-menu-left #menu-list:hover::-webkit-scrollbar {
+	display: block;
+}
 ::-webkit-scrollbar {
 	width: 7px;
 }

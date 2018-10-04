@@ -83,9 +83,6 @@ $(document).ready(function() {
 			$(this).parent().toggleClass('favourited');
 			$('#mails #inbox').append($(this).parent());
 		} else {
-			$('#mails #inbox').children().each(function(index, val) {
-				console.log(index, $(val));
-			});
 			$(this).children().toggleClass('fas far');
 			$(this).parent().toggleClass('favourited');
 			$('#mails #favourite-mails').append($(this).parent());
@@ -96,7 +93,6 @@ $(document).ready(function() {
 		if($(this).hasClass('selected')) {
 			//if user clicks on the currently selected, do nothing
 		} else {
-			console.log($(this).attr('id'));
 			let prevSelected = $('#main-menu-left .icon-container.selected').attr('id');
 			let currentlySelected = $(this).attr('id');
 
@@ -162,11 +158,9 @@ $(document).ready(function() {
 	});
 
 	$('#compose-button').click(function() {
-	console.log($('#compose-email-area .compose-box.hidden'));
 		//if there is no box, display a box,
 		if ($('#compose-email-area .compose-box.hidden').length > 0) {
 			$('#compose-email-area .compose-box.hidden').eq(0).toggle('fast').toggleClass('hidden');
-			console.log($('#compose-email-area .compose-box.hidden'));
 		}
 	});
 
@@ -179,13 +173,11 @@ $(document).ready(function() {
 		}
 		if ($(this).hasClass('close')) {
 			$(this).parents('.compose-box').toggle('fast').toggleClass('hidden');
-			console.log($('#compose-email-area .compose-box.hidden'));
 		}
 	});
 
 	let timeoutId;
 	$('#main-menu-left').hover(function() {
-		console.log($(this));
 		if($(this).hasClass('expanded')) {
 
 		} else if ($(this).hasClass('unexpanded')){
@@ -206,7 +198,6 @@ $(document).ready(function() {
 var toggleNavBox = function() {
 	$(document).ready(function() {
 		var box = $('#nav-box');
-			console.log(box[0]);
 		if(box[0].style.display == 'block') {
 			$('#nav-box').slideToggle('fast', function() {
 				$('#triangle').toggle('fast');
