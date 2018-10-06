@@ -3,7 +3,7 @@
 	-Display scroll bar on hover for main menu left
 	-create a function that expands boxes (any boxes at all)
 	-TOOLTIP
-	-Do Compose Message box
+	- fix mobile device #mails not showing 100% height
 */
 
 
@@ -494,7 +494,6 @@ body::-webkit-scrollbar {
 	font-size: .9em;
 	height: 40px;
 	cursor: pointer;
-	min-width: 405px;
 	padding-left: 3.5px;
 }
 #main-content #mails .email:hover {
@@ -507,8 +506,9 @@ body::-webkit-scrollbar {
 }
 
 #main-content #mails .email .select, .fav {
-	left: 20px;
-	margin: 0 15px 0 -2px;
+	position: relative;
+	left: 15px;
+	margin: 0 10px 0 3px;
 	font-size: 1.1em;
 	opacity: .4;
 	color:black
@@ -606,24 +606,22 @@ body::-webkit-scrollbar {
 @media screen and (max-width: 700px) {
 	#main-content {
 		width: 90%;
-		min-width: 500px;
 		overflow-x: hidden;
 		background-color: white;
 	}
 
 	#main-content #top-toolbar {
-		min-width: 500px;
 		width: 85%;
 	}
 
 	#main-content #mails {
-		min-width: 500px;
 	}
 	#main-content #mails .email {
 		height: 75px;
 		display: flex;
-		flex-direction:row;
+		width: 100%;
 		align-items: flex-start;
+		box-sizing: border-box;
 	}
 
 	#main-content #mails .email span.dash {
@@ -644,7 +642,9 @@ body::-webkit-scrollbar {
 	}
 	#main-content #mails .email .sender {
 		font-weight: bold;
-		margin-top: 7.5px;
+    margin-top: 7.5px;
+    position: absolute;
+    left: 39px;
 	}
 	#main-content #mails .email .subject-preview {
 		position: absolute;
@@ -955,4 +955,65 @@ body::-webkit-scrollbar {
 }
 #compose-email-area .toolbar .icon i{
 
+}
+
+@media screen and (max-width: 415px) {
+	#top-nav-bar {
+		width: 100%;
+		min-width: 360px;
+		display: flex;
+	}
+	#top-nav-bar .nav-icon {
+		font-size: 0.85em;
+	}
+	#top-nav-bar #main-menu-expander {
+		top: 23%;
+	}
+	#top-nav-bar #mail-logo {
+		display: none;
+	}
+	#top-nav-bar #search-bar {
+		left: 50px;
+	}
+	#top-nav-bar #apps-expander {
+		right: 70px;
+    top: 20%;
+	}
+	#top-nav-bar #notification {
+		right: 40px;
+    top: 20%;
+	}
+	#top-nav-bar #user-setting {
+		width: 9px;
+    height: 9px;
+    top: 31%;
+    border-radius: 50%;
+	}
+	#main-content #top-toolbar {
+		min-width: 100%;
+		left: -7px;
+		padding-left: 11px;
+		justify-content: space-between;
+	}
+	#main-content #top-toolbar .right {
+	}
+	#main-content #top-toolbar .icon, #main-content #top-toolbar .circle-icon {
+		 margin: 0;
+	}
+	#main-content {
+		width: 100%;
+		min-width: 360px;
+		position: relative;
+		left: 0;
+	}
+	#main-content #mails .email {
+		height: 80px;
+		width: 100%;
+	}
+	#main-menu-left {
+		height: 100%;
+	}
+	#main-menu-left.unexpanded {
+		display: none;
+	}
 }
