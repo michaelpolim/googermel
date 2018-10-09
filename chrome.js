@@ -159,8 +159,15 @@ $(document).ready(function() {
 
 	$('#compose-button').click(function() {
 		//if there is no box, display a box,
-		if ($('#compose-email-area .compose-box.hidden').length > 0) {
-			$('#compose-email-area .compose-box.hidden').eq(0).toggle('fast').toggleClass('hidden');
+		console.log($(window).width());
+		if ($(window).width() < 415) {
+			if($('#new-mail-2').hasClass('hidden')){
+				$('#new-mail-2').toggle('fast').toggleClass('hidden');
+			}
+		} else {
+			if ($('#compose-email-area .compose-box.hidden').length > 0) {
+				$('#compose-email-area .compose-box.hidden').eq(0).toggle('fast').toggleClass('hidden');
+			}
 		}
 	});
 
